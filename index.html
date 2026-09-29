@@ -324,6 +324,24 @@
       border-color: #f0d56a;
     }
 
+    .hotel-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .hotel-links a {
+      text-decoration: none;
+      color: var(--ink);
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
     .slot.train {
       background: #fffdf8;
       box-shadow: inset 4px 0 0 #111;
@@ -749,17 +767,17 @@
           <tr>
             <td>🐻 Dom 8</td>
             <td>Berlín</td>
-            <td>MEININGER Hotel Berlin Central Station<br><span class="aside">Ella-Trebe-Straße 9, junto a la estación central</span></td>
+            <td>MEININGER Hotel Berlin Central Station<br><span class="aside">Ella-Trebe-Straße 9, junto a la estación central</span><span class="hotel-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=MEININGER%20Hotel%20Berlin%20Central%20Station%2C%20Ella-Trebe-Stra%C3%9Fe%209%2C%2010557%20Berlin" target="_blank" rel="noopener">Mapa</a><a href="https://www.booking.com/hotel/de/meininger-berlin-hauptbahnhof.es.html?checkin=2026-11-08&amp;checkout=2026-11-09" target="_blank" rel="noopener">Booking</a></span></td>
           </tr>
           <tr>
             <td>🎻 Lun 9</td>
             <td>Braunschweig</td>
-            <td>Frühlings-Hotel<br><span class="aside">Bankplatz 7, casco antiguo. Unos 6 minutos a pie de la Volkswagen Halle</span></td>
+            <td>Frühlings-Hotel<br><span class="aside">Bankplatz 7, casco antiguo. Unos 6 minutos a pie de la Volkswagen Halle</span><span class="hotel-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Fr%C3%BChlings-Hotel%2C%20Bankplatz%207%2C%2038100%20Braunschweig" target="_blank" rel="noopener">Mapa</a><a href="https://www.booking.com/hotel/de/fruhlings.es.html?checkin=2026-11-09&amp;checkout=2026-11-10" target="_blank" rel="noopener">Booking</a></span></td>
           </tr>
           <tr>
             <td>⚓ Mar 10 y mié 11</td>
             <td>Hamburgo</td>
-            <td>Prize by Radisson, Hamburg City<br><span class="aside">Recha-Lübke-Damm 28, Hammerbrook. Unos 15 minutos a pie de la estación, al lado de los canales</span></td>
+            <td>Prize by Radisson, Hamburg City<br><span class="aside">Recha-Lübke-Damm 28, Hammerbrook. Unos 15 minutos a pie de la estación, al lado de los canales</span><span class="hotel-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Prize%20by%20Radisson%20Hamburg%20City%2C%20Recha-L%C3%BCbke-Damm%2028%2C%2020097%20Hamburg" target="_blank" rel="noopener">Mapa</a><a href="https://www.booking.com/hotel/de/prizeotel-hamburg-city.es.html?checkin=2026-11-10&amp;checkout=2026-11-12" target="_blank" rel="noopener">Booking</a></span></td>
           </tr>
           <tr>
             <td>✈️ Jue 12</td>
@@ -789,6 +807,7 @@
           <div>
             <h3>MEININGER Berlin Central Station <span class="tag hotel">Hotel</span></h3>
             <p>Ella-Trebe-Straße 9. Si el check-in todavía no está abierto, deja las maletas y sal igual. Desde la puerta se llega andando al Reichstag en unos 15 minutos y a la Puerta de Brandeburgo en unos 25, o en un salto de S-Bahn.</p>
+            <p class="hotel-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=MEININGER%20Hotel%20Berlin%20Central%20Station%2C%20Ella-Trebe-Stra%C3%9Fe%209%2C%2010557%20Berlin" target="_blank" rel="noopener">Mapa</a><a href="https://www.booking.com/hotel/de/meininger-berlin-hauptbahnhof.es.html?checkin=2026-11-08&amp;checkout=2026-11-09" target="_blank" rel="noopener">Booking</a></p>
           </div>
         </article>
         <article class="slot walk">
@@ -848,6 +867,7 @@
           <div>
             <h3>Frühlings-Hotel <span class="tag hotel">Hotel</span></h3>
             <p>Bankplatz 7. Check-in, ducha y cena temprano en el casco, alrededor de Kohlmarkt. Hay que estar de camino a la sala a las 18:15.</p>
+            <p class="hotel-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Fr%C3%BChlings-Hotel%2C%20Bankplatz%207%2C%2038100%20Braunschweig" target="_blank" rel="noopener">Mapa</a><a href="https://www.booking.com/hotel/de/fruhlings.es.html?checkin=2026-11-09&amp;checkout=2026-11-10" target="_blank" rel="noopener">Booking</a></p>
           </div>
         </article>
         <article class="slot concert">
@@ -944,6 +964,7 @@
           <div>
             <h3>Prize by Radisson, Hamburg City <span class="tag hotel">Hotel · noche 1 de 2</span></h3>
             <p>Recha-Lübke-Damm 28. Cena por el barrio y a dormir. Mañana es el día largo.</p>
+            <p class="hotel-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Prize%20by%20Radisson%20Hamburg%20City%2C%20Recha-L%C3%BCbke-Damm%2028%2C%2020097%20Hamburg" target="_blank" rel="noopener">Mapa</a><a href="https://www.booking.com/hotel/de/prizeotel-hamburg-city.es.html?checkin=2026-11-10&amp;checkout=2026-11-12" target="_blank" rel="noopener">Booking</a></p>
           </div>
         </article>
       </div>
@@ -1020,6 +1041,7 @@
           <div>
             <h3>Prize by Radisson <span class="tag hotel">Hotel · noche 2 de 2</span></h3>
             <p>Cena en Sankt Pauli o de vuelta hacia el centro. Mañana el margen lo marca el avión.</p>
+            <p class="hotel-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Prize%20by%20Radisson%20Hamburg%20City%2C%20Recha-L%C3%BCbke-Damm%2028%2C%2020097%20Hamburg" target="_blank" rel="noopener">Mapa</a><a href="https://www.booking.com/hotel/de/prizeotel-hamburg-city.es.html?checkin=2026-11-10&amp;checkout=2026-11-12" target="_blank" rel="noopener">Booking</a></p>
           </div>
         </article>
       </div>
