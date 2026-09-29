@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>Alemania · 8–12 noviembre 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,620&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #fff6e4;
+      --card: #fffdf8;
+      --ink: #111111;
+      --muted: #4a453c;
+      --line: #ead9a4;
+      --gold: #ffce00;
+      --gold-soft: #fff1b0;
+      --red: #dd0000;
+      --train: #dd0000;
+      --hotel: #111111;
+      --wait: #7a5b00;
+      --concert: #111111;
+      --shadow: 0 1px 0 rgba(17, 17, 17, 0.05);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Source Sans 3", "Segoe UI", sans-serif;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      z-index: 20;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 12px;
+      background: linear-gradient(#000 0, #000 4px, #dd0000 4px, #dd0000 8px, #ffce00 8px, #ffce00 12px);
+    }
+
+    a { color: var(--red); }
+    a:hover { color: var(--ink); }
+
+    .wrap {
+      width: min(760px, calc(100% - 32px));
+      margin: 0 auto;
+      padding-bottom: 80px;
+    }
+
+    header.top {
+      padding: 48px 0 20px;
+    }
+
+    .kicker {
+      margin: 0 0 8px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--red);
+    }
+
+    h1 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(40px, 6vw, 64px);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      margin: 0 0 14px;
+    }
+
+    .lede {
+      margin: 0;
+      max-width: 38em;
+      color: var(--muted);
+      font-size: 19px;
+    }
+
+    .hero,
+    .trio figure {
+      margin: 4px 0 14px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: inset 0 4px 0 var(--gold);
+      background: var(--card);
+    }
+
+    .hero img,
+    .trio img {
+      display: block;
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+    }
+
+    .trio {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin: 4px 0 14px;
+    }
+
+    .trio figure {
+      margin: 0;
+      box-shadow: none;
+      border-top: 3px solid var(--gold);
+    }
+
+    .trio img { height: 108px; }
+
+    .trio figcaption {
+      padding: 4px 2px 7px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    nav.days a .emoji {
+      margin-right: 4px;
+    }
+
+    .slot.flight .when::before { content: "✈️ "; }
+    .slot.train .when::before { content: "🚆 "; }
+    .slot.metro .when::before { content: "🚇 "; }
+    .slot.hotel .when::before { content: "🏨 "; }
+    .slot.concert .when::before { content: "🎻 "; }
+    .slot.walk .when::before { content: "🚶 "; }
+    .slot.port .when::before { content: "⚓ "; }
+    .slot.wonder .when::before { content: "🚂 "; }
+
+    #espera h2::before { content: "📝 "; }
+    #domingo > h2::before { content: "🐻 "; }
+    #lunes > h2::before { content: "🎻 "; }
+    #martes > h2::before { content: "🚆 "; }
+    #miercoles > h2::before { content: "⚓ "; }
+    #jueves > h2::before { content: "✈️ "; }
+    #horarios > h2::before { content: "🕐 "; }
+
+    nav.days {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 22px 0 8px;
+      position: sticky;
+      top: 12px;
+      background: color-mix(in srgb, var(--paper) 92%, transparent);
+      backdrop-filter: blur(8px);
+      z-index: 2;
+    }
+
+    nav.days a {
+      flex: 0 0 auto;
+      text-decoration: none;
+      color: var(--ink);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    nav.days a span {
+      display: block;
+      font-weight: 400;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    section {
+      margin-top: 28px;
+      scroll-margin-top: 128px;
+    }
+
+    h2 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 500;
+      font-size: 32px;
+      letter-spacing: -0.02em;
+      margin: 0 0 6px;
+    }
+
+    .day-meta {
+      margin: 0 0 16px;
+      color: var(--muted);
+    }
+
+    .card, .slot, .note, .wait-box {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .wait-box {
+      padding: 18px 18px 8px;
+      border-color: var(--gold);
+      background: #fff8dc;
+    }
+
+    .wait-box h2 {
+      font-size: 26px;
+    }
+
+    .wait-box p {
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
+
+    ul.clean {
+      list-style: none;
+      margin: 0;
+      padding: 0 0 8px;
+    }
+
+    ul.clean li {
+      display: grid;
+      grid-template-columns: 16px 1fr;
+      gap: 10px;
+      padding: 9px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    ul.clean li::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      margin-top: 8px;
+      border: 1.5px solid var(--wait);
+      border-radius: 50%;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .slot {
+      display: grid;
+      grid-template-columns: 118px 1fr;
+      gap: 8px 14px;
+      padding: 14px 16px;
+    }
+
+    .when {
+      font-variant-numeric: tabular-nums;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--train);
+    }
+
+    .when small {
+      display: block;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    .slot h3 {
+      margin: 0 0 4px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .slot p, .note p, .card p {
+      margin: 0;
+    }
+
+    .slot p + p, .note p + p {
+      margin-top: 8px;
+    }
+
+    .tag {
+      display: inline-block;
+      margin: 0 6px 6px 0;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      vertical-align: middle;
+    }
+
+    .tag.wait { background: var(--gold); color: var(--ink); }
+    .tag.ok { background: var(--ink); color: var(--gold); }
+    .tag.est { background: var(--gold-soft); color: var(--ink); }
+    .tag.hotel { background: var(--gold); color: var(--ink); }
+    .tag.concert { background: var(--gold); color: var(--ink); }
+
+    .slot.concert {
+      background: var(--concert);
+      color: #fff6e4;
+      border-color: var(--concert);
+      box-shadow: inset 0 4px 0 var(--gold);
+    }
+
+    .slot.concert .when,
+    .slot.concert .when small,
+    .slot.concert a {
+      color: var(--gold);
+    }
+
+    .slot.hotel {
+      background: #fff4c2;
+      border-color: #f0d56a;
+    }
+
+    .slot.train {
+      background: #fffdf8;
+      box-shadow: inset 4px 0 0 #111;
+    }
+
+    .note, .card {
+      padding: 16px 18px;
+      margin-top: 10px;
+    }
+
+    .note strong, .card strong {
+      font-weight: 600;
+    }
+
+    h3.block {
+      margin: 22px 0 8px;
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 500;
+      font-size: 22px;
+    }
+
+    ol.walk {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: step;
+    }
+
+    ol.walk li {
+      counter-increment: step;
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 10px;
+      padding: 10px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    ol.walk li::before {
+      content: counter(step);
+      font-family: Fraunces, Georgia, serif;
+      color: var(--ink);
+      font-size: 16px;
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .aside {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .schedule {
+      overflow-x: auto;
+      background: var(--card);
+      border-radius: 16px;
+      border: 1px solid var(--line);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+
+    .schedule table {
+      border: 0;
+      min-width: 640px;
+    }
+
+    td.time {
+      font-variant-numeric: tabular-nums;
+      font-weight: 600;
+      white-space: nowrap;
+      color: var(--red);
+    }
+
+    td.time small {
+      display: block;
+      font-weight: 400;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      font-size: 16px;
+    }
+
+    th {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    footer {
+      margin-top: 36px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    details {
+      margin-top: 10px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 12px 16px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    details p { color: var(--muted); }
+
+    @media (max-width: 700px) {
+      body {
+        font-size: 17px;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      .wrap {
+        width: min(100% - 28px, 760px);
+        padding-bottom: calc(112px + env(safe-area-inset-bottom));
+      }
+
+      header.top { padding: 22px 0 4px; }
+
+      h1 { font-size: 38px; }
+
+      .lede { font-size: 17px; }
+
+      h2 { font-size: 30px; }
+
+      section { scroll-margin-top: 12px; }
+
+      nav.days {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        gap: 2px;
+        overflow: hidden;
+        justify-content: space-between;
+        padding: 6px 8px calc(8px + env(safe-area-inset-bottom));
+        background: rgba(255, 253, 248, 0.96);
+        border-top: 1px solid var(--line);
+        box-shadow: 0 -8px 24px rgba(36, 30, 24, 0.06);
+      }
+
+      nav.days a.only-wide { display: none; }
+
+      nav.days a {
+        flex: 1 1 0;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background: transparent;
+        border: 0;
+        border-radius: 12px;
+        padding: 6px 1px 8px;
+        font-size: 11px;
+        line-height: 1.15;
+      }
+
+      nav.days a .emoji {
+        margin: 0 0 2px;
+        font-size: 16px;
+        line-height: 1;
+      }
+
+      nav.days a span { display: none; }
+      nav.days a span.emoji { display: block; }
+
+      nav.days a.on {
+        background: var(--ink);
+        color: var(--gold);
+      }
+
+      .slot {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        padding: 16px 16px 18px;
+        border-radius: 20px;
+      }
+
+      .when {
+        font-family: Fraunces, Georgia, serif;
+        font-size: 26px;
+        font-weight: 500;
+        letter-spacing: -0.03em;
+        line-height: 1;
+      }
+
+      .slot h3 { font-size: 19px; }
+
+      ol.walk li::before {
+        width: 28px;
+        height: 28px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--gold);
+        font-size: 16px;
+      }
+
+      ol.walk li { align-items: start; }
+
+      summary {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+      }
+
+      table.stays,
+      table.stays tbody,
+      table.stays tr,
+      table.stays td {
+        display: block;
+      }
+
+      table.stays { border-radius: 20px; }
+
+      table.stays thead { display: none; }
+
+      table.stays tr {
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      table.stays tr:last-child { border-bottom: 0; }
+
+      table.stays td {
+        border: 0;
+        padding: 0;
+      }
+
+      table.stays td:first-child {
+        font-family: Fraunces, Georgia, serif;
+        font-size: 22px;
+        font-weight: 500;
+        letter-spacing: -0.02em;
+      }
+
+      table.stays td:nth-child(2) {
+        color: var(--red);
+        font-weight: 600;
+        margin: 2px 0 4px;
+      }
+
+      table.stays td:nth-child(2):last-child {
+        color: var(--ink);
+        font-weight: 400;
+      }
+
+      .hero img { height: 168px; }
+      .trio img { height: 86px; }
+
+      .schedule {
+        background: transparent;
+        border: 0;
+        overflow: visible;
+      }
+
+      .schedule table { min-width: 0; }
+
+      .schedule thead { display: none; }
+
+      .schedule tr {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2px 12px;
+        margin-top: 10px;
+        padding: 14px 16px 16px;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        border-top: 3px solid var(--gold);
+        background: var(--card);
+      }
+
+      .schedule td {
+        display: block;
+        border: 0;
+        padding: 0;
+      }
+
+      .schedule td:nth-child(1) {
+        grid-column: 1 / -1;
+        color: var(--red);
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .schedule td:nth-child(2) {
+        grid-column: 1 / -1;
+        margin: 2px 0 10px;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.25;
+      }
+
+      .schedule td.time {
+        font-family: Fraunces, Georgia, serif;
+        font-size: 34px;
+        font-weight: 500;
+        letter-spacing: -0.03em;
+        line-height: 1;
+      }
+
+      .schedule td.time:not(:has(small)) {
+        font-family: "Source Sans 3", "Segoe UI", sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0;
+        padding-top: 6px;
+      }
+
+      .schedule td[data-label]::before {
+        content: attr(data-label);
+        display: block;
+        margin-bottom: 4px;
+        font-family: "Source Sans 3", "Segoe UI", sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .schedule td[data-label="Duración"] {
+        grid-column: 1 / -1;
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px solid var(--line);
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--ink);
+      }
+
+      .schedule td[data-label="Duración"]::before {
+        display: inline;
+        margin: 0 6px 0 0;
+        letter-spacing: 0.08em;
+      }
+
+      .schedule td.time small {
+        display: block;
+        margin: 6px 0 0;
+        font-family: "Source Sans 3", "Segoe UI", sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0;
+        color: var(--wait);
+      }
+    }
+
+    @media print {
+      nav.days { display: none; }
+      body { background: white; }
+      .slot, .card, .note, .wait-box, details { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <p class="kicker">8–12 noviembre 2026</p>
+      <h1>Berlín, Braunschweig y el norte.</h1>
+      <p class="lede">Borrador de horarios a partir de tu mapa. Los vuelos y los trenes están en blanco a propósito: cuando me pases cada billete, lo coloco y muevo las visitas alrededor.</p>
+    </header>
+
+    <nav class="days" aria-label="Días">
+      <a class="only-wide" href="#espera"><span class="emoji" aria-hidden="true">📝</span>Falta<span>vuelos y trenes</span></a>
+      <a href="#domingo"><span class="emoji" aria-hidden="true">🐻</span>Dom 8<span>Berlín</span></a>
+      <a href="#lunes"><span class="emoji" aria-hidden="true">🎻</span>Lun 9<span>Concierto</span></a>
+      <a href="#martes"><span class="emoji" aria-hidden="true">🚆</span>Mar 10<span>Tres ciudades</span></a>
+      <a href="#miercoles"><span class="emoji" aria-hidden="true">⚓</span>Mié 11<span>Hamburgo</span></a>
+      <a href="#jueves"><span class="emoji" aria-hidden="true">✈️</span>Jue 12<span>Vuelo</span></a>
+      <a href="#horarios"><span class="emoji" aria-hidden="true">🕐</span>Horas<span>salida y llegada</span></a>
+    </nav>
+
+    <section id="espera">
+      <div class="wait-box">
+        <h2>Lo que falta de ti</h2>
+        <p>Con esto recalculo cada día. El resto de la guía ya se puede usar.</p>
+        <ul class="clean">
+          <li>✈️ Vuelo del domingo 8: Málaga → Berlín. Número, salida, llegada y terminal.</li>
+          <li>✈️ Vuelo del jueves 12: Hamburgo → Málaga. Número, salida, llegada y terminal.</li>
+          <li>🚆 Tren del lunes: Berlín Hbf → Braunschweig Hbf.</li>
+          <li>🚆 Trenes del martes, en este orden: Braunschweig → Hannover, Hannover → Bremen, Bremen → Hamburgo.</li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-top:12px">
+        <p><span class="tag ok">Confirmado</span> <span class="tag est">Propuesta, se mueve con los billetes</span> <span class="tag wait">Pendiente</span> <span class="tag hotel">Hotel del mapa</span></p>
+        <p class="aside" style="margin-top:10px">En noviembre anochece sobre las 16:30. El domingo y el lunes la luz manda el plan. El martes es el día justo: Hannover por la mañana, Bremen por la tarde, Hamburgo para dormir. El miércoles es el único día entero en una ciudad.</p>
+      </div>
+
+      <table class="stays" style="margin-top:12px">
+        <thead>
+          <tr><th>Noche</th><th>Ciudad</th><th>Hotel</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>🐻 Dom 8</td>
+            <td>Berlín</td>
+            <td>MEININGER Hotel Berlin Central Station<br><span class="aside">Ella-Trebe-Straße 9, junto a la estación central</span></td>
+          </tr>
+          <tr>
+            <td>🎻 Lun 9</td>
+            <td>Braunschweig</td>
+            <td>Frühlings-Hotel<br><span class="aside">Bankplatz 7, casco antiguo. Unos 6 minutos a pie de la Volkswagen Halle</span></td>
+          </tr>
+          <tr>
+            <td>⚓ Mar 10 y mié 11</td>
+            <td>Hamburgo</td>
+            <td>Prize by Radisson, Hamburg City<br><span class="aside">Recha-Lübke-Damm 28, Hammerbrook. Unos 15 minutos a pie de la estación, al lado de los canales</span></td>
+          </tr>
+          <tr>
+            <td>✈️ Jue 12</td>
+            <td colspan="2">Sin hotel. El vuelo sale de Hamburgo.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="domingo">
+      <h2>Domingo 8 · Berlín</h2>
+      <figure class="hero">
+        <img src="img/berlin.png" alt="Ilustración de la Puerta de Brandeburgo">
+      </figure>
+      <p class="day-meta">Llegas, dejas la maleta y caminas lo que dé la luz. Duermes al lado de la estación desde la que sales mañana.</p>
+
+      <div class="timeline">
+        <article class="slot flight">
+          <div class="when">Vuelo <small>pendiente</small></div>
+          <div>
+            <h3>Málaga → Berlín <span class="tag wait">Pendiente</span></h3>
+            <p>Al aterrizar en BER, el tren de aeropuerto FEX deja en Berlin Hauptbahnhof en unos 30 minutos. El hotel está a menos de dos minutos de esa estación.</p>
+          </div>
+        </article>
+        <article class="slot hotel">
+          <div class="when">Al llegar</div>
+          <div>
+            <h3>MEININGER Berlin Central Station <span class="tag hotel">Hotel</span></h3>
+            <p>Ella-Trebe-Straße 9. Si el check-in todavía no está abierto, deja las maletas y sal igual. Desde la puerta se llega andando al Reichstag en unos 15 minutos y a la Puerta de Brandeburgo en unos 25, o en un salto de S-Bahn.</p>
+          </div>
+        </article>
+        <article class="slot walk">
+          <div class="when">Tarde <small>si hay luz</small></div>
+          <div>
+            <h3>Un paseo, no la ciudad entera <span class="tag est">Propuesta</span></h3>
+            <p>Con una sola tarde, el recorrido que sí está junto es este. El Muro de la East Side Gallery queda aparte: solo cabe si aterrizas pronto, antes de las 14:00.</p>
+          </div>
+        </article>
+      </div>
+
+      <h3 class="block">🚶 Orden a pie desde la puerta</h3>
+      <div class="card">
+        <ol class="walk">
+          <li><div><strong>Puerta de Brandeburgo.</strong> El centro del paseo. De noche está iluminada y es el mejor uso de un domingo.</div></li>
+          <li><div><strong>Monumento a los judíos de Europa asesinados.</strong> Cinco minutos al sur de la puerta. Al aire libre, se puede ver de noche.</div></li>
+          <li><div><strong>Mauerstraße y Checkpoint Charlie.</strong> Siguen el mismo paseo hacia el sur, unos 15 minutos más. El domingo las tiendas están cerradas; las calles, no.</div></li>
+          <li><div><strong>Catedral de Berlín y Alexanderplatz.</strong> Otros 25 minutos hacia el este, o en metro. Déjalos para el lunes por la mañana si el domingo se hace de noche.</div></li>
+        </ol>
+      </div>
+      <div class="note">
+        <p><strong>Cenar</strong> en esa misma zona, entre la puerta y Friedrichstraße, y volver al hotel en S-Bahn. Mañana el tren sale de la puerta de al lado.</p>
+      </div>
+    </section>
+
+    <section id="lunes">
+      <h2>Lunes 9 · Berlín y Braunschweig</h2>
+      <figure class="hero">
+        <img src="img/braunschweig.png" alt="Ilustración del casco de Braunschweig y la sala de conciertos">
+      </figure>
+      <p class="day-meta">Por la mañana, lo que no dio tiempo ayer. A mediodía, el tren. Por la tarde, el casco antiguo con luz. A las 19:30, La La Land.</p>
+
+      <div class="timeline">
+        <article class="slot walk">
+          <div class="when">09:00–11:00 <small>propuesta</small></div>
+          <div>
+            <h3>Catedral y Alexanderplatz <span class="tag est">Propuesta</span></h3>
+            <p>Es el tramo del mapa que pide luz de día. Si prefieres el muro, cambia este bloque por la East Side Gallery: S-Bahn hasta Ostbahnhof y un paseo por Mühlenstraße, ida y vuelta en una hora.</p>
+          </div>
+        </article>
+        <article class="slot train">
+          <div class="when">11:15–12:00 <small>salida recomendada</small></div>
+          <div>
+            <h3>Berlín Hbf → Braunschweig Hbf <span class="tag wait">Tren pendiente</span></h3>
+            <p>El ICE directo suele tardar 1 h 15–1 h 30. Salir en esa franja te deja en Braunschweig sobre las 13:00, con tres horas de luz antes del concierto. Si el vuelo del domingo fue muy tarde y quieres más Berlín, dímelo y apretamos la tarde.</p>
+          </div>
+        </article>
+        <article class="slot walk">
+          <div class="when">13:00–16:00 <small>propuesta</small></div>
+          <div>
+            <h3>Casco antiguo, sin maleta <span class="tag est">Propuesta</span></h3>
+            <p>Hay consigna en Braunschweig Hbf. El centro está a un tranvía corto o a unos 20 minutos a pie. Todo el grupo de pins del centro cabe en este bloque. El museo del Burgplatz está en obras y el lunes, además, su otra sede cierra: se ve la plaza, no la exposición.</p>
+          </div>
+        </article>
+        <article class="slot hotel">
+          <div class="when">16:00</div>
+          <div>
+            <h3>Frühlings-Hotel <span class="tag hotel">Hotel</span></h3>
+            <p>Bankplatz 7. Check-in, ducha y cena temprano en el casco, alrededor de Kohlmarkt. Hay que estar de camino a la sala a las 18:15.</p>
+          </div>
+        </article>
+        <article class="slot concert">
+          <div class="when">18:30 puertas<br>19:30 inicio</div>
+          <div>
+            <h3>La La Land in Concert <span class="tag concert">Confirmado</span></h3>
+            <p>Volkswagen Halle, Europaplatz 1. Apertura del Braunschweig International Film Festival. La película, en inglés con subtítulos en alemán, dura 128 minutos con la Staatsorchester Braunschweig y el director Erik Ochsner. Cuenta con salir sobre las 21:45.</p>
+            <p>El hotel está a unos 6 minutos a pie. La entrada del concierto vale como billete de bus y tranvía de la ciudad (zona 40) desde las 16:30 hasta que cierra el servicio.</p>
+            <p><a href="https://www.volkswagenhalle-braunschweig.de/de/besucher/termine/eroeffnungsfilmkonzert-la-la-land-in-concert-306">Ficha en la Volkswagen Halle</a></p>
+          </div>
+        </article>
+        <article class="slot walk">
+          <div class="when">22:00</div>
+          <div>
+            <h3>Vuelta andando al hotel</h3>
+            <p>Misma noche en el Frühlings. Mañana el tren sale pronto.</p>
+          </div>
+        </article>
+      </div>
+
+      <h3 class="block">🏰 Orden del casco, desde la estación</h3>
+      <div class="card">
+        <ol class="walk">
+          <li><div><strong>Burgplatz.</strong> Catedral, castillo de Dankwarderode y entrada del ayuntamiento, en la misma plaza.</div></li>
+          <li><div><strong>Landesmuseum.</strong> El edificio del mapa está aquí, cerrado por obras. Foto de la fachada y se sigue.</div></li>
+          <li><div><strong>Schloss-Arkaden y Happy Rizzi House.</strong> El centro comercial y, a su lado, la casa de colores de James Rizzi. Se ve por fuera.</div></li>
+          <li><div><strong>Kohlmarkt y Altstadtmarkt.</strong> Las dos plazas del paseo hacia el hotel.</div></li>
+          <li><div><strong>Jakob-Kemenate.</strong> Ya junto a Bankplatz, a un minuto del Frühlings-Hotel.</div></li>
+        </ol>
+      </div>
+
+      <details>
+        <summary>🗺️ En el mapa, y fuera de este día</summary>
+        <p>Schloss Richmond queda al sur de la estación, en un parque. El Lokpark, también al sur, es un museo de trenes. La abadía de Riddagshausen está a unos 4 km al este y pide bus. Con el concierto a las 19:30 no caben. Si alguno te importa de verdad, lo metemos el martes a primera hora y recortamos Hannover.</p>
+      </details>
+    </section>
+
+    <section id="martes">
+      <h2>Martes 10 · Hannover, Bremen, Hamburgo</h2>
+      <div class="trio">
+        <figure>
+          <img src="img/hannover.png" alt="Ilustración del ayuntamiento nuevo de Hannover">
+          <figcaption>🏛️ Hannover</figcaption>
+        </figure>
+        <figure>
+          <img src="img/bremen.png" alt="Ilustración de la plaza del mercado de Bremen">
+          <figcaption>🐴 Bremen</figcaption>
+        </figure>
+        <figure>
+          <img src="img/hamburg.png" alt="Ilustración de los almacenes de Hamburgo">
+          <figcaption>⚓ Hamburgo</figcaption>
+        </figure>
+      </div>
+      <p class="day-meta">No duermes en Hannover ni en Bremen. Son dos paseos entre trenes, con la maleta en consigna. La noche es en Hamburgo.</p>
+
+      <div class="timeline">
+        <article class="slot train">
+          <div class="when">08:30–09:15 <small>propuesta</small></div>
+          <div>
+            <h3>Braunschweig → Hannover Hbf <span class="tag wait">Tren pendiente</span></h3>
+            <p>Este trayecto es corto y frecuente: unos 30–45 minutos. Deja la maleta en la consigna de Hannover Hbf.</p>
+          </div>
+        </article>
+        <article class="slot walk">
+          <div class="when">09:30–12:15</div>
+          <div>
+            <h3>Hannover, el centro <span class="tag est">Propuesta</span></h3>
+            <p>Todo el mapa menos los jardines está a 15 minutos a pie de la estación, en línea hacia el sur. Da para verlo con calma y volver a por la maleta.</p>
+          </div>
+        </article>
+        <article class="slot train">
+          <div class="when">12:30–13:30 <small>propuesta</small></div>
+          <div>
+            <h3>Hannover → Bremen Hbf <span class="tag wait">Tren pendiente</span></h3>
+            <p>Suele tardar alrededor de una hora. Otra consigna en Bremen Hbf.</p>
+          </div>
+        </article>
+        <article class="slot walk">
+          <div class="when">13:45–16:45</div>
+          <div>
+            <h3>Bremen, el centro <span class="tag est">Propuesta</span></h3>
+            <p>El mercado, el Rolando, la catedral, Böttcherstraße y el Schnoor son un solo paseo. A las 16:30 ya es de noche; el Schnoor con luces cierra bien el día.</p>
+          </div>
+        </article>
+        <article class="slot train">
+          <div class="when">17:00–18:00 <small>propuesta</small></div>
+          <div>
+            <h3>Bremen → Hamburgo Hbf <span class="tag wait">Tren pendiente</span></h3>
+            <p>También alrededor de una hora. Desde la estación, el hotel queda a unos 15 minutos a pie hacia los canales.</p>
+          </div>
+        </article>
+        <article class="slot hotel">
+          <div class="when">Noche</div>
+          <div>
+            <h3>Prize by Radisson, Hamburg City <span class="tag hotel">Hotel · noche 1 de 2</span></h3>
+            <p>Recha-Lübke-Damm 28. Cena por el barrio y a dormir. Mañana es el día largo.</p>
+          </div>
+        </article>
+      </div>
+
+      <h3 class="block">🏛️ Hannover, bajando desde la estación</h3>
+      <div class="card">
+        <ol class="walk">
+          <li><div><strong>Altstadt.</strong> En el mapa figura como Aldstadt. Es el casco, a unos 10 minutos de Hannover Hbf.</div></li>
+          <li><div><strong>Marktkirche y antiguo ayuntamiento.</strong> La misma plaza.</div></li>
+          <li><div><strong>Nuevo ayuntamiento.</strong> Diez minutos más al sur. La cúpula se visita si está abierta; si no, la fachada y el parque bastan.</div></li>
+          <li><div><strong>Maschpark.</strong> Justo detrás del ayuntamiento nuevo. Buen sitio para sentarse antes de volver a la estación.</div></li>
+        </ol>
+      </div>
+      <details>
+        <summary>🌷 Herrenhäuser Garten</summary>
+        <p>Está en el mapa y merece la pena, y también se come el día: unos 20 minutos en tranvía cada trayecto, más el jardín. En este borrador se queda fuera para que Bremen exista. Si lo prefieres a Bremen, el martes pasa a ser Hannover con jardines y un tren directo más tarde a Hamburgo.</p>
+      </details>
+
+      <h3 class="block">🐴 Bremen, bajando desde la estación</h3>
+      <div class="card">
+        <ol class="walk">
+          <li><div><strong>Herdentorswallmühle.</strong> El molino de la muralla, a mitad de camino entre la estación y el mercado.</div></li>
+          <li><div><strong>Sögestraße.</strong> La calle comercial que desemboca en la plaza.</div></li>
+          <li><div><strong>Plaza del mercado.</strong> Ayuntamiento, catedral de San Pedro y la estatua de Rolando. El pin «Roland Fruchthandel» es la frutería pegada a la estatua.</div></li>
+          <li><div><strong>Böttcherstraße.</strong> La calle estrecha que sale de la plaza hacia el río. Diez minutos, sin prisa.</div></li>
+          <li><div><strong>Martinianleger.</strong> El muelle del Weser, al final de esa calle.</div></li>
+          <li><div><strong>Schnoor.</strong> El barrio de callejuelas, justo al sur de la catedral. Desde aquí se vuelve andando a la estación en unos 15 minutos.</div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="miercoles">
+      <h2>Miércoles 11 · Hamburgo</h2>
+      <figure class="hero">
+        <img src="img/hamburg.png" alt="Ilustración de la Speicherstadt de Hamburgo">
+      </figure>
+      <p class="day-meta">El día bueno. Duermes otra vez en el Prize. Casi todo el mapa se hace a pie desde el hotel; el puerto, al final, en transporte.</p>
+
+      <div class="note">
+        <p><strong>Reserva ya el Miniatur Wunderland</strong> para esta mañana. Abre todos los días, como mínimo de 9:30 a 18:00, y la entrada con hora evita la cola. Entre la maqueta y el paseo se va una mañana entera: calcula unas dos horas y media dentro.</p>
+      </div>
+
+      <div class="timeline">
+        <article class="slot wonder">
+          <div class="when">09:30–12:00 <small>propuesta</small></div>
+          <div>
+            <h3>Miniatur Wunderland <span class="tag est">Propuesta</span></h3>
+            <p>En Speicherstadt, Kehrwieder. Desde el hotel se llega andando por los canales en unos 20 minutos. Al salir ya estás en el barrio de los almacenes.</p>
+          </div>
+        </article>
+        <article class="slot walk">
+          <div class="when">12:15–14:30</div>
+          <div>
+            <h3>Almacenes, Chilehaus y el centro <span class="tag est">Propuesta</span></h3>
+            <p>Speicherstadt, Chilehaus, Deichstraße y la iglesia de San Nicolás (el memorial, la torre calcinada). Después el ayuntamiento y Alster Arcade, que están juntos.</p>
+          </div>
+        </article>
+        <article class="slot walk">
+          <div class="when">15:00–16:30</div>
+          <div>
+            <h3>San Miguel y Krameramtsstuben <span class="tag est">Propuesta</span></h3>
+            <p>La iglesia y las casitas de los viudos, en la misma manzana. Se puede subir a la torre si quieres ver el puerto desde arriba antes de bajar a él.</p>
+          </div>
+        </article>
+        <article class="slot port">
+          <div class="when">17:00–19:00</div>
+          <div>
+            <h3>Puerto <span class="tag est">Propuesta</span></h3>
+            <p>Túnel viejo del Elba desde Landungsbrücken, el muelle del Fischmarkt y Sankt Pauli. El mercado del pescado es el domingo de madrugada, así que ese pin es el barrio y el agua, no los puestos.</p>
+          </div>
+        </article>
+        <article class="slot hotel">
+          <div class="when">Noche</div>
+          <div>
+            <h3>Prize by Radisson <span class="tag hotel">Hotel · noche 2 de 2</span></h3>
+            <p>Cena en Sankt Pauli o de vuelta hacia el centro. Mañana el margen lo marca el avión.</p>
+          </div>
+        </article>
+      </div>
+
+      <details>
+        <summary>🎨 Kunsthalle y Außenalster</summary>
+        <p>También están en el mapa. La Kunsthalle suele abrir de martes a domingo y queda al lado de la estación: encaja el jueves por la mañana si el vuelo sale por la tarde. El Außenalster es un paseo de lago, bonito si el tiempo acompaña, y sustituye bien al puerto si prefieres agua tranquila a Sankt Pauli.</p>
+      </details>
+    </section>
+
+    <section id="jueves">
+      <h2>Jueves 12 · Hamburgo</h2>
+      <p class="day-meta">Duermes en Hamburgo y vuelas desde aquí a Málaga. La mañana existe solo si el avión sale tarde.</p>
+
+      <div class="timeline">
+        <article class="slot walk">
+          <div class="when">Mañana <small>según el vuelo</small></div>
+          <div>
+            <h3>Lo que quepa antes del aeropuerto <span class="tag wait">Depende del avión</span></h3>
+            <p>Cuando tenga la hora de salida, cierro este hueco. Si el vuelo es a mediodía, sales del hotel temprano y esta casilla desaparece. Si sale a última hora de la tarde, da para la Kunsthalle o un paseo por el Außenalster y una comida.</p>
+          </div>
+        </article>
+        <article class="slot metro">
+          <div class="when">Unas 3 h antes <small>del despegue</small></div>
+          <div>
+            <h3>Hotel → Hamburgo Hbf → aeropuerto <span class="tag est">Propuesta</span></h3>
+            <p>El hotel está a unos 15 minutos a pie de la estación. Desde Hamburgo Hbf, el S-Bahn S1 deja en el aeropuerto en unos 25 minutos. Para un vuelo dentro de Schengen, llega unas 2 horas antes.</p>
+            <p>Regla práctica hasta que haya billete: sal del hotel tres horas antes del despegue.</p>
+          </div>
+        </article>
+        <article class="slot flight">
+          <div class="when">Vuelo <small>pendiente</small></div>
+          <div>
+            <h3>Hamburgo → Málaga <span class="tag wait">Pendiente</span></h3>
+            <p>Aeropuerto de Hamburgo (HAM). Aquí se cierra el viaje.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="horarios">
+      <h2>Horarios</h2>
+      <p class="day-meta">Salida y llegada de cada viaje. La duración es la de siempre. El reloj marcado como propuesta se sustituye cuando tengas el billete.</p>
+      <div class="schedule">
+        <table>
+          <thead>
+            <tr><th>Día</th><th>Viaje</th><th>Salida</th><th>Llegada</th><th>Duración</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dom 8</td>
+              <td>✈️ Málaga → Berlín</td>
+              <td class="time" data-label="Salida">pendiente</td>
+              <td class="time" data-label="Llegada">pendiente</td>
+              <td data-label="Duración">pendiente</td>
+            </tr>
+            <tr>
+              <td>Dom 8</td>
+              <td>🚆 Aeropuerto BER → Berlin Hbf</td>
+              <td class="time" data-label="Salida">pendiente</td>
+              <td class="time" data-label="Llegada">pendiente</td>
+              <td data-label="Duración">unos 30 min (FEX)</td>
+            </tr>
+            <tr>
+              <td>Lun 9</td>
+              <td>🚆 Berlín Hbf → Braunschweig Hbf</td>
+              <td class="time" data-label="Salida">11:30<small>propuesta</small></td>
+              <td class="time" data-label="Llegada">13:00<small>propuesta</small></td>
+              <td data-label="Duración">1 h 15 – 1 h 30</td>
+            </tr>
+            <tr>
+              <td>Mar 10</td>
+              <td>🚆 Braunschweig → Hannover Hbf</td>
+              <td class="time" data-label="Salida">08:30<small>propuesta</small></td>
+              <td class="time" data-label="Llegada">09:15<small>propuesta</small></td>
+              <td data-label="Duración">30 – 45 min</td>
+            </tr>
+            <tr>
+              <td>Mar 10</td>
+              <td>🚆 Hannover → Bremen Hbf</td>
+              <td class="time" data-label="Salida">12:30<small>propuesta</small></td>
+              <td class="time" data-label="Llegada">13:30<small>propuesta</small></td>
+              <td data-label="Duración">unos 60 min</td>
+            </tr>
+            <tr>
+              <td>Mar 10</td>
+              <td>🚆 Bremen → Hamburgo Hbf</td>
+              <td class="time" data-label="Salida">17:00<small>propuesta</small></td>
+              <td class="time" data-label="Llegada">18:00<small>propuesta</small></td>
+              <td data-label="Duración">unos 60 min</td>
+            </tr>
+            <tr>
+              <td>Jue 12</td>
+              <td>🚇 Hamburgo Hbf → aeropuerto HAM</td>
+              <td class="time" data-label="Salida">pendiente</td>
+              <td class="time" data-label="Llegada">pendiente</td>
+              <td data-label="Duración">unos 25 min (S1)</td>
+            </tr>
+            <tr>
+              <td>Jue 12</td>
+              <td>✈️ Hamburgo → Málaga</td>
+              <td class="time" data-label="Salida">pendiente</td>
+              <td class="time" data-label="Llegada">pendiente</td>
+              <td data-label="Duración">pendiente</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note">
+        <p>🧳 El martes lleva maleta en tres trenes. La consigna de Hannover Hbf y la de Bremen Hbf evitan pasear el casco con ella. En Braunschweig, el lunes, haz lo mismo al llegar.</p>
+        <p style="margin-top:8px">Mapa de origen: <a href="https://www.google.com/maps/d/viewer?mid=1GwEA0W5KEDjaX_XY8JNnT26xJ36nYuI&usp=sharing">Brunswik Lalaland</a>. Las tres casitas son los hoteles de arriba.</p>
+      </div>
+    </section>
+
+    <footer>
+      Borrador del 29 de septiembre de 2026. Faltan los dos vuelos y los trenes del lunes y del martes. Cuando los tengas, los sustituyo en cada día y ajusto lo que se ve con luz.
+    </footer>
+  </div>
+  <script>
+    const dayLinks = [...document.querySelectorAll("nav.days a")];
+    const daySections = dayLinks
+      .map((link) => document.querySelector(link.getAttribute("href")))
+      .filter(Boolean);
+    const markDay = (id) => {
+      dayLinks.forEach((link) => {
+        link.classList.toggle("on", link.getAttribute("href") === "#" + id);
+      });
+    };
+    const seen = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible) markDay(visible.target.id);
+    }, { rootMargin: "-8% 0px -55% 0px", threshold: [0.15, 0.4] });
+    daySections.forEach((section) => seen.observe(section));
+  </script>
+</body>
+</html>
