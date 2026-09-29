@@ -178,6 +178,14 @@
       font-size: 12px;
     }
 
+    nav.days a.on {
+      background: var(--ink);
+      color: var(--gold);
+      border-color: var(--ink);
+    }
+
+    nav.days a.on span { color: #ffe58a; }
+
     section {
       margin-top: 28px;
       scroll-margin-top: 128px;
@@ -1140,13 +1148,34 @@
         link.classList.toggle("on", link.getAttribute("href") === "#" + id);
       });
     };
-    const seen = new IntersectionObserver((entries) => {
-      const visible = entries
-        .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-      if (visible) markDay(visible.target.id);
-    }, { rootMargin: "-8% 0px -55% 0px", threshold: [0.15, 0.4] });
-    daySections.forEach((section) => seen.observe(section));
+    const currentDay = () => {
+      const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+      if (atBottom) return daySections[daySections.length - 1].id;
+      const nav = document.querySelector("nav.days");
+      const navAtTop = nav && getComputedStyle(nav).position === "sticky";
+      const marker = navAtTop ? nav.getBoundingClientRect().bottom + 16 : 80;
+      let current = daySections[0].id;
+      for (const section of daySections) {
+        if (section.getBoundingClientRect().top <= marker) current = section.id;
+      }
+      return current;
+    };
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      markDay(currentDay());
+    };
+    const requestUpdate = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(update);
+    };
+    dayLinks.forEach((link) => {
+      link.addEventListener("click", () => markDay(link.getAttribute("href").slice(1)));
+    });
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate);
+    update();
   </script>
 </body>
 </html>
