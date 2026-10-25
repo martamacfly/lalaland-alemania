@@ -846,6 +846,9 @@
       left: 0;
       right: 0;
       min-height: 4px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
       margin: 0;
       padding: 2px 4px;
       border: 0;
@@ -910,6 +913,8 @@
     .detail p { margin: 0; }
     .detail .d-when { font-size: 14px; font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; }
     .detail .d-what { font-size: 19px; font-weight: 600; margin: 2px 0 4px; }
+    .detail .d-city { font-size: 15px; font-weight: 600; color: var(--muted); white-space: nowrap; }
+    .blk small.city { font-weight: 600; opacity: 1; font-variant-numeric: normal; }
     .detail .d-where { color: var(--muted); font-size: 16px; }
 
     .agenda-list h4 {
@@ -1027,7 +1032,7 @@
       <ul class="legend">
         <li><i style="background:var(--c-hotel)"></i>Hotel</li>
         <li><i style="background:var(--c-move)"></i>Trayecto: avión, tren, metro</li>
-        <li><i style="background:var(--c-visit)"></i>Visita</li>
+        <li><i style="background:var(--c-visit)"></i>Turismo por la ciudad</li>
         <li><i style="background:var(--c-concert)"></i>Concierto</li>
       </ul>
 
@@ -1076,31 +1081,62 @@
           </div>
         </article>
         <article class="slot walk">
-          <div class="when">11:30–16:30 <small>con luz</small></div>
+          <div class="when">11:15–13:30 <small>propuesta</small></div>
           <div>
-            <h3>De la estación a Alexanderplatz, a pie <span class="tag est">Propuesta</span></h3>
-            <p>Con el día entero, cabe el recorrido completo de abajo. Domingo: las tiendas cierran, pero monumentos, calles y restaurantes no. Come por Friedrichstraße, a mitad de camino.</p>
+            <h3>Reichstag, Puerta y Checkpoint Charlie <span class="tag est">Propuesta</span></h3>
+            <p>Pasos 1 a 4 de la lista de abajo, todo a pie desde el hotel. Domingo: las tiendas cierran, pero monumentos, calles y restaurantes no.</p>
+          </div>
+        </article>
+        <article class="slot walk">
+          <div class="when">13:30–14:30</div>
+          <div>
+            <h3>Comida en Gendarmenmarkt <span class="tag est">Propuesta</span></h3>
+            <p>A cinco minutos de Checkpoint Charlie, de camino hacia Unter den Linden.</p>
+          </div>
+        </article>
+        <article class="slot walk">
+          <div class="when">14:30–16:30 <small>última luz</small></div>
+          <div>
+            <h3>Unter den Linden, catedral y Alexanderplatz <span class="tag est">Propuesta</span></h3>
+            <p>Pasos 5 a 7. Para entrar en la catedral hay que llegar antes de las 16:00. Alexanderplatz coincide con la puesta de sol, sobre las 16:25.</p>
+          </div>
+        </article>
+        <article class="slot walk">
+          <div class="when">16:30–18:00 <small>de noche</small></div>
+          <div>
+            <h3>East Side Gallery y Oberbaumbrücke <span class="tag est">Propuesta</span></h3>
+            <p>Paso 8. S-Bahn de Alexanderplatz a Ostbahnhof, dos paradas. El muro pintado se recorre andando hasta el puente de Oberbaum, que está iluminado de noche. El muro tiene farolas, pero los murales se ven peor que de día.</p>
+            <p class="hotel-links"><a href="https://www.google.com/maps/dir/?api=1&amp;origin=Alexanderplatz%20Berlin&amp;destination=Berlin%20Ostbahnhof&amp;travelmode=transit" target="_blank" rel="noopener">S-Bahn al muro</a></p>
+          </div>
+        </article>
+        <article class="slot walk">
+          <div class="when">18:00–20:30</div>
+          <div>
+            <h3>Cena en Friedrichshain <span class="tag est">Propuesta</span></h3>
+            <p>Al otro lado del puente o en Simon-Dach-Straße, junto a Warschauer Straße. Si te sobra energía, vuelve a Alexanderplatz y sube a la torre de televisión: entrada con hora, mejor comprada antes.</p>
           </div>
         </article>
         <article class="slot metro">
-          <div class="when">Noche</div>
+          <div class="when">20:30–21:00</div>
           <div>
-            <h3>Alexanderplatz → Berlin Hbf <span class="tag est">Propuesta</span></h3>
-            <p>Cena por Alexanderplatz o el barrio de San Nicolás. Para volver, el S-Bahn va directo de Alexanderplatz a Hauptbahnhof en unos 8 minutos, con billete sencillo AB. Check-in al llegar.</p>
-            <p class="hotel-links"><a href="https://www.google.com/maps/dir/?api=1&amp;origin=Alexanderplatz%20Berlin&amp;destination=Berlin%20Hauptbahnhof&amp;travelmode=transit" target="_blank" rel="noopener">S-Bahn al hotel</a></p>
+            <h3>Warschauer Straße → Berlin Hbf <span class="tag est">Propuesta</span></h3>
+            <p>El S-Bahn va directo en unos 15 minutos, con billete sencillo AB. Check-in al llegar y a dormir: mañana se sale directa al tren.</p>
+            <p class="hotel-links"><a href="https://www.google.com/maps/dir/?api=1&amp;origin=Berlin%20Warschauer%20Stra%C3%9Fe&amp;destination=Berlin%20Hauptbahnhof&amp;travelmode=transit" target="_blank" rel="noopener">S-Bahn al hotel</a></p>
           </div>
         </article>
       </div>
 
-      <h3 class="block">🚶 Orden a pie desde el hotel</h3>
+      <h3 class="block">🚶 Orden del día desde el hotel</h3>
       <div class="card">
         <ol class="walk">
           <li><div><strong>Reichstag.</strong> Unos 15 minutos desde el hotel, cruzando el Spree. Para subir a la cúpula hace falta registrarse antes, gratis, en la web del Bundestag; sin registro, se ve por fuera.</div></li>
           <li><div><strong>Puerta de Brandeburgo.</strong> Diez minutos más, por el borde del Tiergarten.</div></li>
           <li><div><strong>Monumento a los judíos de Europa asesinados.</strong> Cinco minutos al sur de la puerta.</div></li>
-          <li><div><strong>Mauerstraße y Checkpoint Charlie.</strong> Unos 15 minutos más hacia el sur.</div></li>
-          <li><div><strong>Unter den Linden hasta la Isla de los Museos.</strong> Por Friedrichstraße hacia el norte y luego al este, unos 25 minutos. Catedral de Berlín y Lustgarten. El domingo la catedral solo abre de 12:00 a 17:00 y el último acceso es a las 16:00: si quieres entrar, llega antes de esa hora.</div></li>
-          <li><div><strong>Alexanderplatz.</strong> Diez minutos más, cruzando el río. Ya de noche, con la torre de televisión iluminada.</div></li>
+          <li><div><strong>Mauerstraße, Topografía del Terror y Checkpoint Charlie.</strong> Unos 15 minutos más hacia el sur. En la Topografía hay un tramo del muro original al aire libre.</div></li>
+          <li><div><strong>Gendarmenmarkt y Unter den Linden.</strong> Por Friedrichstraße hacia el norte y luego al este hasta Bebelplatz, unos 15 minutos.</div></li>
+          <li><div><strong>Isla de los Museos.</strong> Catedral de Berlín y Lustgarten. El domingo la catedral solo abre de 12:00 a 17:00 y el último acceso es a las 16:00.</div></li>
+          <li><div><strong>Barrio de San Nicolás y Alexanderplatz.</strong> Diez minutos más, cruzando el río, ya con la torre de televisión iluminada.</div></li>
+          <li><div><strong>East Side Gallery.</strong> Dos paradas de S-Bahn, y paseo junto al Spree hasta el Oberbaumbrücke.</div></li>
         </ol>
       </div>
     </section>
@@ -1110,15 +1146,14 @@
       <figure class="hero">
         <img src="img/braunschweig.png" alt="Ilustración del casco de Braunschweig y la sala de conciertos">
       </figure>
-      <p class="day-meta">Una hora de Berlín antes del tren de las 10:39. Llegas a Braunschweig a la hora justa del check-in, paseas el casco con luz y a las 19:30, La La Land.</p>
+      <p class="day-meta">Mañana tranquila, sin visitas: del hotel directa al tren de las 10:39. Llegas a Braunschweig a la hora justa del check-in, paseas el casco con luz y a las 19:30, La La Land.</p>
 
       <div class="timeline">
-        <article class="slot walk">
-          <div class="when">08:30–10:00 <small>propuesta</small></div>
+        <article class="slot hotel">
+          <div class="when">10:00 <small>salir del hotel</small></div>
           <div>
-            <h3>East Side Gallery <span class="tag est">Propuesta</span></h3>
-            <p>El trozo de muro pintado. El S-Bahn va directo de Berlin Hbf a Ostbahnhof en unos 10 minutos; desde ahí, paseo por Mühlenstraße y vuelta. Deja la maleta en la habitación: la salida es hasta las 11:00 y la recoges al volver.</p>
-            <p class="hotel-links"><a href="https://www.google.com/maps/dir/?api=1&amp;origin=Berlin%20Hauptbahnhof&amp;destination=Berlin%20Ostbahnhof&amp;travelmode=transit" target="_blank" rel="noopener">S-Bahn al muro</a></p>
+            <h3>MEININGER → Berlin Hbf, andén 7 <span class="tag hotel">Hotel</span></h3>
+            <p>Desayuno y maleta sin prisa. La salida es hasta las 11:00, pero a las 10:00 cruza a la estación: el andén 7 está en la planta más baja y se tarda en bajar.</p>
           </div>
         </article>
         <article class="slot train">
@@ -1463,7 +1498,7 @@
     </footer>
   </div>
   <script>
-    // Agenda: [día, inicio, fin, tipo, etiqueta, dónde, hora fija del billete]
+    // Agenda: [día, inicio, fin, tipo, etiqueta, dónde, hora fija del billete, ciudad]
     const DAYS = [
       { date: "2026-11-08", short: "Dom 8", city: "Berlín" },
       { date: "2026-11-09", short: "Lun 9", city: "Brunsw." },
@@ -1471,65 +1506,55 @@
       { date: "2026-11-11", short: "Mié 11", city: "Hamburgo" },
       { date: "2026-11-12", short: "Jue 12", city: "Bremen" },
     ];
-    const KIND = { hotel: "Hotel", move: "Trayecto", visit: "Visita", concert: "Concierto" };
+    const KIND = { hotel: "Hotel", move: "Trayecto", visit: "Turismo", concert: "Concierto" };
     const PLAN = [
-      [0, "04:30", "06:30", "move", "Aeropuerto Málaga", "Aeropuerto de Málaga (AGP). Control de seguridad y embarque.", false],
-      [0, "06:30", "09:55", "move", "Vuelo FR 233", "Ryanair Málaga → Berlín Brandeburgo (BER).", true],
-      [0, "09:55", "11:00", "move", "BER → Hbf", "Aeropuerto BER y tren FEX hasta Berlin Hauptbahnhof, unos 30 minutos.", false],
-      [0, "11:00", "11:30", "hotel", "MEININGER", "Dejar maletas en recepción. Ella-Trebe-Straße 9, junto a Berlin Hbf.", false],
-      [0, "11:30", "16:30", "visit", "Berlín a pie", "Reichstag, Puerta de Brandeburgo, Monumento, Checkpoint Charlie, Unter den Linden y catedral (domingo 12–17, último acceso 16:00).", false],
-      [0, "16:30", "20:30", "visit", "Alexanderplatz", "Alexanderplatz de noche y cena por el barrio de San Nicolás.", false],
-      [0, "20:30", "20:45", "move", "S-Bahn", "Alexanderplatz → Berlin Hbf, unos 8 minutos.", false],
-      [0, "20:45", "24:00", "hotel", "MEININGER", "Check-in y noche. Ella-Trebe-Straße 9, Berlín.", false],
+      [0, "04:30", "06:30", "move", "Aeropuerto Málaga", "Aeropuerto de Málaga (AGP). Control de seguridad y embarque.", false, "Málaga"],
+      [0, "06:30", "09:55", "move", "Vuelo FR 233", "Ryanair Málaga → Berlín Brandeburgo (BER).", true, "Málaga → Berlín"],
+      [0, "09:55", "11:00", "move", "BER → Hbf", "Aeropuerto BER y tren FEX hasta Berlin Hauptbahnhof, unos 30 minutos.", false, "Berlín"],
+      [0, "11:00", "11:15", "hotel", "MEININGER", "Dejar maletas en recepción. Ella-Trebe-Straße 9, junto a Berlin Hbf.", false, "Berlín"],
+      [0, "11:15", "20:30", "visit", "Turismo por Berlín", "Día por la ciudad hasta la noche, con comida y cena fuera.", false, "Berlín"],
+      [0, "20:30", "21:00", "move", "S-Bahn", "Vuelta en S-Bahn a Berlin Hbf.", false, "Berlín"],
+      [0, "21:00", "24:00", "hotel", "MEININGER", "Check-in y noche. Ella-Trebe-Straße 9, Berlín.", false, "Berlín"],
 
-      [1, "04:00", "08:30", "hotel", "MEININGER", "Noche en Berlín. Ella-Trebe-Straße 9.", false],
-      [1, "08:30", "10:00", "visit", "East Side Gallery", "S-Bahn a Ostbahnhof y paseo por Mühlenstraße. La maleta se queda en la habitación.", false],
-      [1, "10:00", "10:20", "hotel", "Salida", "Recoger la maleta y dejar la habitación (hasta las 11:00).", false],
-      [1, "10:20", "10:39", "move", "Andén 7", "Berlin Hbf, planta inferior. Coche 34, plazas 91 y 92.", false],
-      [1, "10:39", "12:50", "move", "ICE 950", "Berlín Hbf (andén 7) → Braunschweig Hbf (andén 6). Coche 34, plazas 91 y 92.", true],
-      [1, "12:50", "13:15", "move", "Tranvía", "Braunschweig Hbf → Rathaus y a pie hasta Bankplatz.", false],
-      [1, "13:15", "13:45", "hotel", "Frühlings", "Check-in desde las 13:00. Bankplatz 7. Se pagan aquí los 99 €.", false],
-      [1, "13:45", "16:30", "visit", "Casco antiguo", "Jakob-Kemenate, Altstadtmarkt, Kohlmarkt, Burgplatz, Landesmuseum y Rizzi House.", false],
-      [1, "16:30", "17:30", "hotel", "Frühlings", "Descanso en el hotel.", false],
-      [1, "17:30", "18:15", "visit", "Cena", "Cena temprana alrededor de Kohlmarkt.", false],
-      [1, "18:15", "18:30", "move", "A pie", "Del casco a la Volkswagen Halle, unos 8 minutos.", false],
-      [1, "18:30", "21:45", "concert", "La La Land", "Volkswagen Halle, Europaplatz 1. Block Oberring 206, fila 17, asientos 11 y 12. Puertas 18:30, inicio 19:30.", true],
-      [1, "21:45", "22:00", "move", "A pie", "Vuelta al hotel.", false],
-      [1, "22:00", "24:00", "hotel", "Frühlings", "Noche. Bankplatz 7, Braunschweig.", false],
+      [1, "04:00", "10:00", "hotel", "MEININGER", "Noche, desayuno y maleta. Salida del hotel a las 10:00.", false, "Berlín"],
+      [1, "10:00", "10:39", "move", "Andén 7", "Cruzar a Berlin Hbf y bajar al andén 7, en la planta inferior.", false, "Berlín"],
+      [1, "10:39", "12:50", "move", "ICE 950", "Berlín Hbf (andén 7) → Braunschweig Hbf (andén 6). Coche 34, plazas 91 y 92.", true, "Berlín → Braunschweig"],
+      [1, "12:50", "13:15", "move", "Tranvía", "Braunschweig Hbf → Rathaus y a pie hasta Bankplatz.", false, "Braunschweig"],
+      [1, "13:15", "13:45", "hotel", "Frühlings", "Check-in desde las 13:00. Bankplatz 7. Se pagan aquí los 99 €.", false, "Braunschweig"],
+      [1, "13:45", "16:30", "visit", "Turismo por Braunschweig", "Tiempo por la ciudad mientras hay luz.", false, "Braunschweig"],
+      [1, "16:30", "17:30", "hotel", "Frühlings", "Descanso en el hotel.", false, "Braunschweig"],
+      [1, "17:30", "18:15", "visit", "Cena", "Cena temprana en el centro.", false, "Braunschweig"],
+      [1, "18:15", "18:30", "move", "A pie", "A pie hasta la Volkswagen Halle, unos 8 minutos.", false, "Braunschweig"],
+      [1, "18:30", "21:45", "concert", "La La Land", "Volkswagen Halle, Europaplatz 1. Block Oberring 206, fila 17, asientos 11 y 12. Puertas 18:30, inicio 19:30.", true, "Braunschweig"],
+      [1, "21:45", "22:00", "move", "A pie", "Vuelta al hotel.", false, "Braunschweig"],
+      [1, "22:00", "24:00", "hotel", "Frühlings", "Noche. Bankplatz 7, Braunschweig.", false, "Braunschweig"],
 
-      [2, "04:00", "08:20", "hotel", "Frühlings", "Noche en Braunschweig. Sin desayuno incluido.", false],
-      [2, "08:20", "08:52", "move", "A la estación", "A pie o en tranvía hasta Braunschweig Hbf, andén 6.", false],
-      [2, "08:52", "09:28", "move", "ICE 944", "Braunschweig Hbf (andén 6) → Hannover Hbf (andén 12).", true],
-      [2, "09:28", "09:45", "move", "Consigna", "Dejar la maleta en la consigna de Hannover Hbf.", false],
-      [2, "09:45", "12:00", "visit", "Hannover centro", "Altstadt, Marktkirche, nuevo ayuntamiento y Maschpark.", false],
-      [2, "12:00", "13:45", "visit", "Herrenhausen", "Tranvía 4 o 5 desde Kröpcke a los Herrenhäuser Gärten. Salir a las 13:45 como tarde.", false],
-      [2, "13:45", "14:36", "move", "Hbf y maleta", "Vuelta a Hannover Hbf y recoger la maleta antes de las 14:20. Andén 7.", false],
-      [2, "14:36", "15:57", "move", "ICE 880", "Hannover Hbf (andén 7) → Hamburgo Hbf (andén 11).", true],
-      [2, "15:57", "16:30", "move", "S1", "S1 dirección Wedel, cuatro paradas hasta Reeperbahn, y 4 minutos a pie.", false],
-      [2, "16:30", "18:30", "hotel", "Prize St. Pauli", "Check-in desde las 15:00. Holstenstraße 7, Hamburgo.", false],
-      [2, "18:30", "22:30", "visit", "St. Pauli", "Cena por la Reeperbahn, o el Binnenalster en S1 hasta Jungfernstieg.", false],
-      [2, "22:30", "24:00", "hotel", "Prize St. Pauli", "Noche 1 de 2. Holstenstraße 7.", false],
+      [2, "04:00", "08:20", "hotel", "Frühlings", "Noche en Braunschweig. Sin desayuno incluido.", false, "Braunschweig"],
+      [2, "08:20", "08:52", "move", "A la estación", "A pie o en tranvía hasta Braunschweig Hbf, andén 6.", false, "Braunschweig"],
+      [2, "08:52", "09:28", "move", "ICE 944", "Braunschweig Hbf (andén 6) → Hannover Hbf (andén 12).", true, "Braunschweig → Hannover"],
+      [2, "09:28", "09:45", "move", "Consigna", "Dejar la maleta en la consigna de Hannover Hbf.", false, "Hannover"],
+      [2, "09:45", "13:45", "visit", "Turismo por Hannover", "Tiempo por la ciudad. Volver hacia la estación a las 13:45.", false, "Hannover"],
+      [2, "13:45", "14:36", "move", "Hbf y maleta", "Vuelta a Hannover Hbf y recoger la maleta antes de las 14:20. Andén 7.", false, "Hannover"],
+      [2, "14:36", "15:57", "move", "ICE 880", "Hannover Hbf (andén 7) → Hamburgo Hbf (andén 11).", true, "Hannover → Hamburgo"],
+      [2, "15:57", "16:30", "move", "S1", "S1 dirección Wedel, cuatro paradas hasta Reeperbahn, y 4 minutos a pie.", false, "Hamburgo"],
+      [2, "16:30", "18:30", "hotel", "Prize St. Pauli", "Check-in desde las 15:00. Holstenstraße 7, Hamburgo.", false, "Hamburgo"],
+      [2, "18:30", "22:30", "visit", "Turismo por Hamburgo", "Tarde y cena por la ciudad.", false, "Hamburgo"],
+      [2, "22:30", "24:00", "hotel", "Prize St. Pauli", "Noche 1 de 2. Holstenstraße 7.", false, "Hamburgo"],
 
-      [3, "04:00", "08:50", "hotel", "Prize St. Pauli", "Noche y desayuno. Holstenstraße 7.", false],
-      [3, "08:50", "09:30", "move", "S1 y a pie", "S1 hasta Landungsbrücken y unos 15 minutos junto al agua.", false],
-      [3, "09:30", "12:00", "visit", "Wunderland", "Miniatur Wunderland, Kehrwieder. Falta reservar la entrada con hora.", false],
-      [3, "12:00", "14:30", "visit", "Speicherstadt", "Almacenes, Chilehaus, Deichstraße, San Nicolás, ayuntamiento y Alster Arcade.", false],
-      [3, "14:30", "16:15", "visit", "San Miguel", "Iglesia y torre de San Miguel (10:00–17:30) y Krameramtsstuben.", false],
-      [3, "16:15", "19:00", "visit", "Puerto", "Landungsbrücken, túnel viejo del Elba y Fischmarkt. Ya de noche.", false],
-      [3, "19:00", "21:30", "visit", "Cena", "Cena en Sankt Pauli, a unos minutos del hotel.", false],
-      [3, "21:30", "24:00", "hotel", "Prize St. Pauli", "Noche 2 de 2. Deja la maleta hecha.", false],
+      [3, "04:00", "09:00", "hotel", "Prize St. Pauli", "Noche y desayuno. Holstenstraße 7.", false, "Hamburgo"],
+      [3, "09:00", "21:30", "visit", "Turismo por Hamburgo", "Día entero por la ciudad, con comida y cena fuera.", false, "Hamburgo"],
+      [3, "21:30", "24:00", "hotel", "Prize St. Pauli", "Noche 2 de 2. Deja la maleta hecha.", false, "Hamburgo"],
 
-      [4, "04:00", "07:55", "hotel", "Prize St. Pauli", "Última noche. Salida del hotel a las 07:55.", false],
-      [4, "07:55", "08:42", "move", "S1 a Hbf", "A pie a Reeperbahn y S1 hasta Hamburgo Hbf, andén 14.", false],
-      [4, "08:42", "09:41", "move", "ICE 107", "Hamburgo Hbf (andén 14) → Bremen Hbf (andén 9).", true],
-      [4, "09:41", "10:00", "move", "Consigna", "Dejar la maleta en la consigna de Bremen Hbf.", false],
-      [4, "10:00", "13:30", "visit", "Bremen centro", "Molino, Sögestraße, plaza del mercado, Rolando, Böttcherstraße y el Weser.", false],
-      [4, "13:30", "16:45", "visit", "Schnoor", "Comida y paseo por el Schnoor. De noche desde las 16:30.", false],
-      [4, "16:45", "17:20", "move", "Tranvía 6", "Recoger la maleta en Bremen Hbf y tranvía 6 al aeropuerto, unos 16 minutos.", false],
-      [4, "17:20", "19:50", "move", "Aeropuerto BRE", "Aeropuerto de Bremen. Control y embarque.", false],
-      [4, "19:50", "23:10", "move", "Vuelo FR 9930", "Ryanair Bremen → Málaga.", true],
-      [4, "23:10", "24:00", "move", "Málaga", "Llegada al aeropuerto de Málaga. Fin del viaje.", false],
-    ].map(([day, start, end, kind, label, where, fixed]) => ({ day, start, end, kind, label, where, fixed }));
+      [4, "04:00", "07:55", "hotel", "Prize St. Pauli", "Última noche. Salida del hotel a las 07:55.", false, "Hamburgo"],
+      [4, "07:55", "08:42", "move", "S1 a Hbf", "A pie a Reeperbahn y S1 hasta Hamburgo Hbf, andén 14.", false, "Hamburgo"],
+      [4, "08:42", "09:41", "move", "ICE 107", "Hamburgo Hbf (andén 14) → Bremen Hbf (andén 9).", true, "Hamburgo → Bremen"],
+      [4, "09:41", "10:00", "move", "Consigna", "Dejar la maleta en la consigna de Bremen Hbf.", false, "Bremen"],
+      [4, "10:00", "16:45", "visit", "Turismo por Bremen", "Día por la ciudad, con la maleta en consigna. Volver a Bremen Hbf a las 16:45.", false, "Bremen"],
+      [4, "16:45", "17:20", "move", "Tranvía 6", "Recoger la maleta en Bremen Hbf y tranvía 6 al aeropuerto, unos 16 minutos.", false, "Bremen"],
+      [4, "17:20", "19:50", "move", "Aeropuerto BRE", "Aeropuerto de Bremen. Control y embarque.", false, "Bremen"],
+      [4, "19:50", "23:10", "move", "Vuelo FR 9930", "Ryanair Bremen → Málaga.", true, "Bremen → Málaga"],
+      [4, "23:10", "24:00", "move", "Málaga", "Llegada al aeropuerto de Málaga. Fin del viaje.", false, "Málaga"],
+    ].map(([day, start, end, kind, label, where, fixed, city]) => ({ day, start, end, kind, label, where, fixed, city }));
 
     (() => {
       const START = 4;
@@ -1570,7 +1595,7 @@
         const color = getComputedStyle(btn).backgroundColor;
         detail.style.borderLeftColor = color;
         detail.innerHTML = `<p class="d-when">${DAYS[b.day].short} · ${range(b)} · ${status(b)}</p>
-          <p class="d-what">${b.label}</p><p class="d-where">${b.where}</p>`;
+          <p class="d-what">${b.label} <span class="d-city">📍 ${b.city}</span></p><p class="d-where">${b.where}</p>`;
       };
 
       PLAN.forEach((b) => {
@@ -1580,8 +1605,11 @@
         btn.className = `blk ${b.kind}`;
         btn.style.top = `calc(${s - START} * var(--hh) + 1px)`;
         btn.style.height = `calc(${dur} * var(--hh) - 2px)`;
-        btn.setAttribute("aria-label", `${DAYS[b.day].short}, ${range(b)}: ${b.label}. ${b.where}`);
-        if (dur >= 0.6) btn.innerHTML = b.label + (dur >= 1.4 ? `<small>${b.start}</small>` : "");
+        btn.setAttribute("aria-label", `${DAYS[b.day].short}, ${range(b)}, ${b.city}: ${b.label}. ${b.where}`);
+        const cityShort = b.city.includes("→") ? "→ " + b.city.split("→")[1].trim() : b.city;
+        if (dur >= 0.6) btn.innerHTML = b.label +
+          (dur >= 1.1 && b.kind !== "visit" ? `<small class="city">📍 ${cityShort}</small>` : "") +
+          (dur >= 2 ? `<small>${b.start}</small>` : "");
         btn.addEventListener("click", () => show(b, btn));
         btn.addEventListener("mouseenter", () => show(b, btn));
         btn.addEventListener("focus", () => show(b, btn));
@@ -1593,7 +1621,7 @@
       document.getElementById("agenda-lista").innerHTML = DAYS.map((d, i) =>
         `<h4>${d.short} · ${d.city === "Brunsw." ? "Braunschweig" : d.city}</h4><ul>` +
         PLAN.filter((b) => b.day === i).map((b) =>
-          `<li><b>${range(b)}</b> · ${b.label}${b.fixed ? " 🎫" : ""}. <span class="aside">${b.where}</span></li>`).join("") +
+          `<li><b>${range(b)}</b> · ${b.label}${b.fixed ? " 🎫" : ""} · 📍 ${b.city}. <span class="aside">${b.where}</span></li>`).join("") +
         "</ul>").join("");
 
       // Hora actual en Alemania; ?ahora=2026-11-10T13:00 permite probar otra hora.
@@ -1635,7 +1663,7 @@
           cols[day].append(line);
         }
         card.innerHTML = `<span class="now-label">Ahora · ${DAYS[day].short} · ${fmt(Math.min(h, 23.99))}</span>` +
-          (cur ? `<p><strong>${cur.label}</strong> (${range(cur)}). ${cur.where}</p>` : `<p>En casa, en Málaga.</p>`) +
+          (cur ? `<p>📍 <strong>${cur.city}</strong> · ${cur.label} (${range(cur)}). ${cur.where}</p>` : `<p>En casa, en Málaga.</p>`) +
           (next ? `<p>Después: ${next.day === day ? "" : DAYS[next.day].short + " "}${next.start} · ${next.label}</p>` : "");
         if (cur && cur.btn) show(cur, cur.btn);
       };
