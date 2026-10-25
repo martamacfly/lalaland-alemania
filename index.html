@@ -140,6 +140,7 @@
     .slot.wonder .when::before { content: "🚂 "; }
 
     #espera h2::before { content: "📝 "; }
+    #donde > h2::before { content: "📍 "; }
     #domingo > h2::before { content: "🐻 "; }
     #lunes > h2::before { content: "🎻 "; }
     #martes > h2::before { content: "🚆 "; }
@@ -720,6 +721,225 @@
       }
     }
 
+    .map-mini {
+      margin: 12px 0 0;
+      overflow: hidden;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: inset 0 4px 0 var(--gold);
+    }
+
+    .map-mini iframe {
+      display: block;
+      width: 100%;
+      height: 300px;
+      border: 0;
+      margin-top: 4px;
+    }
+
+    .map-mini figcaption {
+      padding: 10px 14px 12px;
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    .map-mini figcaption a { font-weight: 600; white-space: nowrap; }
+
+    #donde {
+      --c-hotel: #d29b00;
+      --c-move: #d40000;
+      --c-visit: #0091b3;
+      --c-concert: #7d3cc2;
+      --hh: 30px;
+    }
+
+    .now-card {
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      border-radius: 16px;
+      background: var(--ink);
+      color: #fff6e4;
+      box-shadow: inset 0 4px 0 var(--gold);
+    }
+
+    .now-card .now-label {
+      display: block;
+      margin-bottom: 2px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .now-card p { margin: 0; }
+    .now-card p + p { margin-top: 6px; color: #e9dcc0; font-size: 16px; }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 14px;
+      margin: 0 0 10px;
+      padding: 0;
+      list-style: none;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .legend li { display: flex; align-items: center; gap: 6px; }
+
+    .legend i {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+    }
+
+    .agenda {
+      display: grid;
+      grid-template-columns: 30px repeat(5, minmax(0, 1fr));
+      gap: 0 4px;
+      padding: 12px 10px 14px 6px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+    }
+
+    .agenda .dh {
+      padding: 0 2px 8px;
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.15;
+      text-align: center;
+    }
+
+    .agenda .dh span {
+      display: block;
+      font-weight: 400;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .agenda .axis,
+    .agenda .col {
+      position: relative;
+      height: calc(20 * var(--hh));
+    }
+
+    .agenda .axis span {
+      position: absolute;
+      right: 4px;
+      transform: translateY(-50%);
+      font-size: 11px;
+      font-variant-numeric: tabular-nums;
+      color: var(--muted);
+    }
+
+    .agenda .col {
+      background-image: repeating-linear-gradient(to bottom, var(--line) 0 1px, transparent 1px calc(2 * var(--hh)));
+    }
+
+    .agenda .col.today { background-color: #fff4c2; }
+
+    .blk {
+      position: absolute;
+      left: 0;
+      right: 0;
+      min-height: 4px;
+      margin: 0;
+      padding: 2px 4px;
+      border: 0;
+      border-radius: 4px;
+      overflow: hidden;
+      font: 600 11px/1.15 "Source Sans 3", "Segoe UI", sans-serif;
+      text-align: left;
+      color: #fff;
+      cursor: pointer;
+      overflow-wrap: anywhere;
+      hyphens: auto;
+    }
+
+    .blk::after {
+      content: "";
+      position: absolute;
+      inset: -3px 0;
+    }
+
+    .blk small {
+      display: block;
+      font-weight: 400;
+      font-variant-numeric: tabular-nums;
+      opacity: 0.9;
+    }
+
+    .blk.hotel { background: var(--c-hotel); color: var(--ink); }
+    .blk.move { background: var(--c-move); }
+    .blk.visit { background: var(--c-visit); }
+    .blk.concert { background: var(--c-concert); }
+
+    .blk:hover,
+    .blk:focus-visible,
+    .blk.sel {
+      z-index: 2;
+      outline: 2px solid var(--ink);
+      outline-offset: 1px;
+    }
+
+    .nowline {
+      position: absolute;
+      left: -3px;
+      right: -3px;
+      z-index: 3;
+      height: 3px;
+      border-radius: 2px;
+      background: var(--ink);
+      box-shadow: 0 0 0 2px var(--card);
+      pointer-events: none;
+    }
+
+    .detail {
+      min-height: 88px;
+      margin-top: 10px;
+      padding: 14px 16px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-left: 6px solid var(--line);
+      border-radius: 16px;
+    }
+
+    .detail p { margin: 0; }
+    .detail .d-when { font-size: 14px; font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .detail .d-what { font-size: 19px; font-weight: 600; margin: 2px 0 4px; }
+    .detail .d-where { color: var(--muted); font-size: 16px; }
+
+    .agenda-list h4 {
+      margin: 14px 0 4px;
+      font-size: 15px;
+    }
+
+    .agenda-list ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 15px;
+    }
+
+    .agenda-list li {
+      padding: 4px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .agenda-list b { font-variant-numeric: tabular-nums; }
+
+    @media (max-width: 700px) {
+      #donde { --hh: 28px; }
+      .agenda { gap: 0 3px; padding: 10px 6px 12px 2px; grid-template-columns: 26px repeat(5, minmax(0, 1fr)); }
+      .agenda .dh { font-size: 12px; }
+      .agenda .dh span { font-size: 10px; }
+      .agenda .axis span { font-size: 10px; right: 3px; }
+      .blk { padding: 2px 3px; font-size: 10.5px; }
+    }
+
     @media print {
       nav.days { display: none; }
       body { background: white; }
@@ -737,6 +957,7 @@
 
     <nav class="days" aria-label="Días">
       <a class="only-wide" href="#espera"><span class="emoji" aria-hidden="true">🎫</span>Reservas<span>lo que hay</span></a>
+      <a href="#donde"><span class="emoji" aria-hidden="true">📍</span>Dónde<span>cada hora</span></a>
       <a href="#domingo"><span class="emoji" aria-hidden="true">🐻</span>Dom 8<span>Berlín</span></a>
       <a href="#lunes"><span class="emoji" aria-hidden="true">🎻</span>Lun 9<span>Concierto</span></a>
       <a href="#martes"><span class="emoji" aria-hidden="true">🚆</span>Mar 10<span>Hannover</span></a>
@@ -790,6 +1011,36 @@
           </tr>
         </tbody>
       </table>
+
+      <figure class="map-mini">
+        <iframe src="https://www.google.com/maps/d/embed?mid=1GwEA0W5KEDjaX_XY8JNnT26xJ36nYuI" title="Mapa Brunswik Lalaland con hoteles y visitas" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <figcaption>🗺️ Mapa «Brunswik Lalaland», con los pins del viaje. <a href="https://www.google.com/maps/d/viewer?mid=1GwEA0W5KEDjaX_XY8JNnT26xJ36nYuI&amp;usp=sharing" target="_blank" rel="noopener">Abrir a pantalla completa</a></figcaption>
+      </figure>
+    </section>
+
+    <section id="donde">
+      <h2>Dónde estar, hora a hora</h2>
+      <p class="day-meta">Cada columna es un día, de 04:00 a 24:00. Toca un bloque para ver qué toca y dónde. Durante el viaje, la raya negra marca la hora actual (hora de Alemania).</p>
+
+      <div class="now-card" id="ahora" aria-live="polite"></div>
+
+      <ul class="legend">
+        <li><i style="background:var(--c-hotel)"></i>Hotel</li>
+        <li><i style="background:var(--c-move)"></i>Trayecto: avión, tren, metro</li>
+        <li><i style="background:var(--c-visit)"></i>Visita</li>
+        <li><i style="background:var(--c-concert)"></i>Concierto</li>
+      </ul>
+
+      <div class="agenda" id="agenda" role="group" aria-label="Agenda del viaje por horas"></div>
+
+      <div class="detail" id="detalle" aria-live="polite">
+        <p class="d-where">Toca un bloque del gráfico.</p>
+      </div>
+
+      <details>
+        <summary>📋 Ver la agenda como lista</summary>
+        <div class="agenda-list" id="agenda-lista"></div>
+      </details>
     </section>
 
     <section id="domingo">
@@ -844,11 +1095,11 @@
       <h3 class="block">🚶 Orden a pie desde el hotel</h3>
       <div class="card">
         <ol class="walk">
-          <li><div><strong>Reichstag.</strong> Unos 15 minutos desde el hotel, cruzando el Spree.</div></li>
+          <li><div><strong>Reichstag.</strong> Unos 15 minutos desde el hotel, cruzando el Spree. Para subir a la cúpula hace falta registrarse antes, gratis, en la web del Bundestag; sin registro, se ve por fuera.</div></li>
           <li><div><strong>Puerta de Brandeburgo.</strong> Diez minutos más, por el borde del Tiergarten.</div></li>
           <li><div><strong>Monumento a los judíos de Europa asesinados.</strong> Cinco minutos al sur de la puerta.</div></li>
           <li><div><strong>Mauerstraße y Checkpoint Charlie.</strong> Unos 15 minutos más hacia el sur.</div></li>
-          <li><div><strong>Unter den Linden hasta la Isla de los Museos.</strong> Por Friedrichstraße hacia el norte y luego al este, unos 25 minutos. Catedral de Berlín y Lustgarten.</div></li>
+          <li><div><strong>Unter den Linden hasta la Isla de los Museos.</strong> Por Friedrichstraße hacia el norte y luego al este, unos 25 minutos. Catedral de Berlín y Lustgarten. El domingo la catedral solo abre de 12:00 a 17:00 y el último acceso es a las 16:00: si quieres entrar, llega antes de esa hora.</div></li>
           <li><div><strong>Alexanderplatz.</strong> Diez minutos más, cruzando el río. Ya de noche, con la torre de televisión iluminada.</div></li>
         </ol>
       </div>
@@ -968,10 +1219,10 @@
           </div>
         </article>
         <article class="slot metro">
-          <div class="when">12:00–14:00 <small>propuesta</small></div>
+          <div class="when">12:00–13:45 <small>propuesta</small></div>
           <div>
             <h3>Herrenhäuser Gärten <span class="tag est">Propuesta</span></h3>
-            <p>Ahora sí cabe. Tranvía 4 o 5 desde Kröpcke, unos 20 minutos cada trayecto, y una hora larga en el jardín. Si prefieres no correr, come con calma en el centro y deja los jardines.</p>
+            <p>Ahora sí cabe. Tranvía 4 o 5 desde Kröpcke, unos 15–20 minutos cada trayecto, y una hora larga en el Großer Garten. En invierno abre más o menos de 9:00 a 16:30 y las fuentes no funcionan. Sal de allí a las 13:45 como tarde: hay que recoger la maleta antes del tren de las 14:36. Si prefieres no correr, come con calma en el centro y deja los jardines.</p>
             <p class="hotel-links"><a href="https://www.google.com/maps/dir/?api=1&amp;origin=Kr%C3%B6pcke%20Hannover&amp;destination=Herrenh%C3%A4user%20G%C3%A4rten&amp;travelmode=transit" target="_blank" rel="noopener">Tranvía a Herrenhausen</a></p>
           </div>
         </article>
@@ -1006,7 +1257,7 @@
         <ol class="walk">
           <li><div><strong>Altstadt.</strong> En el mapa figura como Aldstadt. Es el casco, a unos 10 minutos de Hannover Hbf.</div></li>
           <li><div><strong>Marktkirche y antiguo ayuntamiento.</strong> La misma plaza.</div></li>
-          <li><div><strong>Nuevo ayuntamiento.</strong> Diez minutos más al sur. La cúpula se visita si está abierta; si no, la fachada y el parque bastan.</div></li>
+          <li><div><strong>Nuevo ayuntamiento.</strong> Diez minutos más al sur. El ascensor de la cúpula suele cerrar la temporada a finales de octubre, así que cuenta con ver el vestíbulo, la fachada y el parque.</div></li>
           <li><div><strong>Maschpark.</strong> Justo detrás del ayuntamiento nuevo. Desde aquí, a Kröpcke para el tranvía a los jardines.</div></li>
         </ol>
       </div>
@@ -1043,7 +1294,7 @@
           <div class="when">15:00–16:15</div>
           <div>
             <h3>San Miguel y Krameramtsstuben <span class="tag est">Propuesta</span></h3>
-            <p>La iglesia y las casitas de los viudos, en la misma manzana. Se puede subir a la torre para ver el puerto desde arriba antes de bajar a él.</p>
+            <p>La iglesia y las casitas de los viudos, en la misma manzana. Se puede subir a la torre para ver el puerto desde arriba antes de bajar a él. De noviembre a marzo abre de 10:00 a 17:30, con último acceso media hora antes; durante misas y conciertos no se visita.</p>
           </div>
         </article>
         <article class="slot port">
@@ -1211,6 +1462,187 @@
       Actualizado el 25 de octubre de 2026 con los vuelos, los trenes, los tres hoteles y las entradas del concierto. Solo falta la entrada del Miniatur Wunderland.
     </footer>
   </div>
+  <script>
+    // Agenda: [día, inicio, fin, tipo, etiqueta, dónde, hora fija del billete]
+    const DAYS = [
+      { date: "2026-11-08", short: "Dom 8", city: "Berlín" },
+      { date: "2026-11-09", short: "Lun 9", city: "Brunsw." },
+      { date: "2026-11-10", short: "Mar 10", city: "Hannover" },
+      { date: "2026-11-11", short: "Mié 11", city: "Hamburgo" },
+      { date: "2026-11-12", short: "Jue 12", city: "Bremen" },
+    ];
+    const KIND = { hotel: "Hotel", move: "Trayecto", visit: "Visita", concert: "Concierto" };
+    const PLAN = [
+      [0, "04:30", "06:30", "move", "Aeropuerto Málaga", "Aeropuerto de Málaga (AGP). Control de seguridad y embarque.", false],
+      [0, "06:30", "09:55", "move", "Vuelo FR 233", "Ryanair Málaga → Berlín Brandeburgo (BER).", true],
+      [0, "09:55", "11:00", "move", "BER → Hbf", "Aeropuerto BER y tren FEX hasta Berlin Hauptbahnhof, unos 30 minutos.", false],
+      [0, "11:00", "11:30", "hotel", "MEININGER", "Dejar maletas en recepción. Ella-Trebe-Straße 9, junto a Berlin Hbf.", false],
+      [0, "11:30", "16:30", "visit", "Berlín a pie", "Reichstag, Puerta de Brandeburgo, Monumento, Checkpoint Charlie, Unter den Linden y catedral (domingo 12–17, último acceso 16:00).", false],
+      [0, "16:30", "20:30", "visit", "Alexanderplatz", "Alexanderplatz de noche y cena por el barrio de San Nicolás.", false],
+      [0, "20:30", "20:45", "move", "S-Bahn", "Alexanderplatz → Berlin Hbf, unos 8 minutos.", false],
+      [0, "20:45", "24:00", "hotel", "MEININGER", "Check-in y noche. Ella-Trebe-Straße 9, Berlín.", false],
+
+      [1, "04:00", "08:30", "hotel", "MEININGER", "Noche en Berlín. Ella-Trebe-Straße 9.", false],
+      [1, "08:30", "10:00", "visit", "East Side Gallery", "S-Bahn a Ostbahnhof y paseo por Mühlenstraße. La maleta se queda en la habitación.", false],
+      [1, "10:00", "10:20", "hotel", "Salida", "Recoger la maleta y dejar la habitación (hasta las 11:00).", false],
+      [1, "10:20", "10:39", "move", "Andén 7", "Berlin Hbf, planta inferior. Coche 34, plazas 91 y 92.", false],
+      [1, "10:39", "12:50", "move", "ICE 950", "Berlín Hbf (andén 7) → Braunschweig Hbf (andén 6). Coche 34, plazas 91 y 92.", true],
+      [1, "12:50", "13:15", "move", "Tranvía", "Braunschweig Hbf → Rathaus y a pie hasta Bankplatz.", false],
+      [1, "13:15", "13:45", "hotel", "Frühlings", "Check-in desde las 13:00. Bankplatz 7. Se pagan aquí los 99 €.", false],
+      [1, "13:45", "16:30", "visit", "Casco antiguo", "Jakob-Kemenate, Altstadtmarkt, Kohlmarkt, Burgplatz, Landesmuseum y Rizzi House.", false],
+      [1, "16:30", "17:30", "hotel", "Frühlings", "Descanso en el hotel.", false],
+      [1, "17:30", "18:15", "visit", "Cena", "Cena temprana alrededor de Kohlmarkt.", false],
+      [1, "18:15", "18:30", "move", "A pie", "Del casco a la Volkswagen Halle, unos 8 minutos.", false],
+      [1, "18:30", "21:45", "concert", "La La Land", "Volkswagen Halle, Europaplatz 1. Block Oberring 206, fila 17, asientos 11 y 12. Puertas 18:30, inicio 19:30.", true],
+      [1, "21:45", "22:00", "move", "A pie", "Vuelta al hotel.", false],
+      [1, "22:00", "24:00", "hotel", "Frühlings", "Noche. Bankplatz 7, Braunschweig.", false],
+
+      [2, "04:00", "08:20", "hotel", "Frühlings", "Noche en Braunschweig. Sin desayuno incluido.", false],
+      [2, "08:20", "08:52", "move", "A la estación", "A pie o en tranvía hasta Braunschweig Hbf, andén 6.", false],
+      [2, "08:52", "09:28", "move", "ICE 944", "Braunschweig Hbf (andén 6) → Hannover Hbf (andén 12).", true],
+      [2, "09:28", "09:45", "move", "Consigna", "Dejar la maleta en la consigna de Hannover Hbf.", false],
+      [2, "09:45", "12:00", "visit", "Hannover centro", "Altstadt, Marktkirche, nuevo ayuntamiento y Maschpark.", false],
+      [2, "12:00", "13:45", "visit", "Herrenhausen", "Tranvía 4 o 5 desde Kröpcke a los Herrenhäuser Gärten. Salir a las 13:45 como tarde.", false],
+      [2, "13:45", "14:36", "move", "Hbf y maleta", "Vuelta a Hannover Hbf y recoger la maleta antes de las 14:20. Andén 7.", false],
+      [2, "14:36", "15:57", "move", "ICE 880", "Hannover Hbf (andén 7) → Hamburgo Hbf (andén 11).", true],
+      [2, "15:57", "16:30", "move", "S1", "S1 dirección Wedel, cuatro paradas hasta Reeperbahn, y 4 minutos a pie.", false],
+      [2, "16:30", "18:30", "hotel", "Prize St. Pauli", "Check-in desde las 15:00. Holstenstraße 7, Hamburgo.", false],
+      [2, "18:30", "22:30", "visit", "St. Pauli", "Cena por la Reeperbahn, o el Binnenalster en S1 hasta Jungfernstieg.", false],
+      [2, "22:30", "24:00", "hotel", "Prize St. Pauli", "Noche 1 de 2. Holstenstraße 7.", false],
+
+      [3, "04:00", "08:50", "hotel", "Prize St. Pauli", "Noche y desayuno. Holstenstraße 7.", false],
+      [3, "08:50", "09:30", "move", "S1 y a pie", "S1 hasta Landungsbrücken y unos 15 minutos junto al agua.", false],
+      [3, "09:30", "12:00", "visit", "Wunderland", "Miniatur Wunderland, Kehrwieder. Falta reservar la entrada con hora.", false],
+      [3, "12:00", "14:30", "visit", "Speicherstadt", "Almacenes, Chilehaus, Deichstraße, San Nicolás, ayuntamiento y Alster Arcade.", false],
+      [3, "14:30", "16:15", "visit", "San Miguel", "Iglesia y torre de San Miguel (10:00–17:30) y Krameramtsstuben.", false],
+      [3, "16:15", "19:00", "visit", "Puerto", "Landungsbrücken, túnel viejo del Elba y Fischmarkt. Ya de noche.", false],
+      [3, "19:00", "21:30", "visit", "Cena", "Cena en Sankt Pauli, a unos minutos del hotel.", false],
+      [3, "21:30", "24:00", "hotel", "Prize St. Pauli", "Noche 2 de 2. Deja la maleta hecha.", false],
+
+      [4, "04:00", "07:55", "hotel", "Prize St. Pauli", "Última noche. Salida del hotel a las 07:55.", false],
+      [4, "07:55", "08:42", "move", "S1 a Hbf", "A pie a Reeperbahn y S1 hasta Hamburgo Hbf, andén 14.", false],
+      [4, "08:42", "09:41", "move", "ICE 107", "Hamburgo Hbf (andén 14) → Bremen Hbf (andén 9).", true],
+      [4, "09:41", "10:00", "move", "Consigna", "Dejar la maleta en la consigna de Bremen Hbf.", false],
+      [4, "10:00", "13:30", "visit", "Bremen centro", "Molino, Sögestraße, plaza del mercado, Rolando, Böttcherstraße y el Weser.", false],
+      [4, "13:30", "16:45", "visit", "Schnoor", "Comida y paseo por el Schnoor. De noche desde las 16:30.", false],
+      [4, "16:45", "17:20", "move", "Tranvía 6", "Recoger la maleta en Bremen Hbf y tranvía 6 al aeropuerto, unos 16 minutos.", false],
+      [4, "17:20", "19:50", "move", "Aeropuerto BRE", "Aeropuerto de Bremen. Control y embarque.", false],
+      [4, "19:50", "23:10", "move", "Vuelo FR 9930", "Ryanair Bremen → Málaga.", true],
+      [4, "23:10", "24:00", "move", "Málaga", "Llegada al aeropuerto de Málaga. Fin del viaje.", false],
+    ].map(([day, start, end, kind, label, where, fixed]) => ({ day, start, end, kind, label, where, fixed }));
+
+    (() => {
+      const START = 4;
+      const toH = (t) => { const [h, m] = t.split(":").map(Number); return h + m / 60; };
+      const range = (b) => `${b.start}–${b.end === "24:00" ? "00:00" : b.end}`;
+      const status = (b) => b.fixed ? "Hora fija del billete" : (b.kind === "hotel" ? "Hotel" : "Propuesta");
+      const agenda = document.getElementById("agenda");
+      const detail = document.getElementById("detalle");
+      const buttons = [];
+
+      agenda.append(document.createElement("div"));
+      DAYS.forEach((d) => {
+        const head = document.createElement("div");
+        head.className = "dh";
+        head.innerHTML = `${d.short}<span>${d.city}</span>`;
+        agenda.append(head);
+      });
+
+      const axis = document.createElement("div");
+      axis.className = "axis";
+      for (let h = 6; h <= 22; h += 2) {
+        const tick = document.createElement("span");
+        tick.textContent = String(h).padStart(2, "0");
+        tick.style.top = `calc(${h - START} * var(--hh))`;
+        axis.append(tick);
+      }
+      agenda.append(axis);
+
+      const cols = DAYS.map(() => {
+        const col = document.createElement("div");
+        col.className = "col";
+        agenda.append(col);
+        return col;
+      });
+
+      const show = (b, btn) => {
+        buttons.forEach((x) => x.classList.toggle("sel", x === btn));
+        const color = getComputedStyle(btn).backgroundColor;
+        detail.style.borderLeftColor = color;
+        detail.innerHTML = `<p class="d-when">${DAYS[b.day].short} · ${range(b)} · ${status(b)}</p>
+          <p class="d-what">${b.label}</p><p class="d-where">${b.where}</p>`;
+      };
+
+      PLAN.forEach((b) => {
+        const s = toH(b.start), e = toH(b.end), dur = e - s;
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = `blk ${b.kind}`;
+        btn.style.top = `calc(${s - START} * var(--hh) + 1px)`;
+        btn.style.height = `calc(${dur} * var(--hh) - 2px)`;
+        btn.setAttribute("aria-label", `${DAYS[b.day].short}, ${range(b)}: ${b.label}. ${b.where}`);
+        if (dur >= 0.6) btn.innerHTML = b.label + (dur >= 1.4 ? `<small>${b.start}</small>` : "");
+        btn.addEventListener("click", () => show(b, btn));
+        btn.addEventListener("mouseenter", () => show(b, btn));
+        btn.addEventListener("focus", () => show(b, btn));
+        b.btn = btn;
+        buttons.push(btn);
+        cols[b.day].append(btn);
+      });
+
+      document.getElementById("agenda-lista").innerHTML = DAYS.map((d, i) =>
+        `<h4>${d.short} · ${d.city === "Brunsw." ? "Braunschweig" : d.city}</h4><ul>` +
+        PLAN.filter((b) => b.day === i).map((b) =>
+          `<li><b>${range(b)}</b> · ${b.label}${b.fixed ? " 🎫" : ""}. <span class="aside">${b.where}</span></li>`).join("") +
+        "</ul>").join("");
+
+      // Hora actual en Alemania; ?ahora=2026-11-10T13:00 permite probar otra hora.
+      const berlinNow = () => {
+        const forced = new URLSearchParams(location.search).get("ahora");
+        if (forced) { const [date, time] = forced.split("T"); return { date, h: toH(time || "12:00") }; }
+        const p = Object.fromEntries(new Intl.DateTimeFormat("en-CA", {
+          timeZone: "Europe/Berlin", year: "numeric", month: "2-digit", day: "2-digit",
+          hour: "2-digit", minute: "2-digit", hourCycle: "h23",
+        }).formatToParts(new Date()).map((x) => [x.type, x.value]));
+        return { date: `${p.year}-${p.month}-${p.day}`, h: Number(p.hour) + Number(p.minute) / 60 };
+      };
+
+      const card = document.getElementById("ahora");
+      const fmt = (h) => `${String(Math.floor(h)).padStart(2, "0")}:${String(Math.round((h % 1) * 60)).padStart(2, "0")}`;
+      let line;
+      const tick = () => {
+        const now = berlinNow();
+        let day = DAYS.findIndex((d) => d.date === now.date);
+        let h = now.h;
+        if (day > 0 && h < START) { day -= 1; h = 24; }
+        cols.forEach((c, i) => c.classList.toggle("today", i === day));
+        if (line) line.remove();
+        if (day === -1) {
+          const before = now.date < DAYS[0].date;
+          card.innerHTML = before
+            ? `<span class="now-label">Antes del viaje</span><p>Primer paso: domingo 8 a las 04:30, en el aeropuerto de Málaga.</p><p>Vuelo FR 233 a las 06:30.</p>`
+            : `<span class="now-label">Viaje terminado</span><p>Llegada a Málaga el jueves 12 a las 23:10.</p>`;
+          return;
+        }
+        const today = PLAN.filter((b) => b.day === day);
+        const cur = today.find((b) => toH(b.start) <= h && h < toH(b.end))
+          || (h < START || (day === 0 && h < 4.5) ? null : today[today.length - 1]);
+        const next = PLAN.find((b) => b.day > day || (b.day === day && toH(b.start) > h));
+        if (h >= START && h < 24) {
+          line = document.createElement("div");
+          line.className = "nowline";
+          line.style.top = `calc(${h - START} * var(--hh) - 1px)`;
+          cols[day].append(line);
+        }
+        card.innerHTML = `<span class="now-label">Ahora · ${DAYS[day].short} · ${fmt(Math.min(h, 23.99))}</span>` +
+          (cur ? `<p><strong>${cur.label}</strong> (${range(cur)}). ${cur.where}</p>` : `<p>En casa, en Málaga.</p>`) +
+          (next ? `<p>Después: ${next.day === day ? "" : DAYS[next.day].short + " "}${next.start} · ${next.label}</p>` : "");
+        if (cur && cur.btn) show(cur, cur.btn);
+      };
+      tick();
+      setInterval(tick, 60000);
+    })();
+  </script>
   <script>
     const dayLinks = [...document.querySelectorAll("nav.days a")];
     const daySections = dayLinks
